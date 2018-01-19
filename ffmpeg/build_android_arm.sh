@@ -3,7 +3,7 @@ export PATH=$NDK_HOME:$PATH
 export TMPDIR=$PWD/tmpdir
 export SYSROOT=$NDK_HOME/platforms/android-15/arch-arm/
 export TOOLCHAIN=$HOME/Enviroment/android-ndk-r12b/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64
-export PREFIX=$PWD/output/android/arm
+export PREFIX=$PWD/../output/android/arm
 export ADDI_CFLAGS="-marm"
 export ADDI_LDFLAGS=""
 export CPU=arm
@@ -21,9 +21,13 @@ function build_one
 --disable-ffplay \
 --disable-ffprobe \
 --disable-ffserver \
---disable-doc \
 --disable-symver \
---enable-libx264  \
+--disable-avdevice \
+--disable-swresample \
+--disable-swscale \
+--disable-postproc \
+--disable-avfilter \
+--enable-libx264 \
 --enable-gpl \
 --enable-encoder=libx264 \
 --enable-small \
